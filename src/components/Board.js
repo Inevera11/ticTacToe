@@ -21,14 +21,14 @@ export const Board = ({
 }) => {
   useEffect(() => {
     if (isWinner(values)) {
-      setWinner(true);
       setPlayer(player === "X" ? "O" : "X");
-      setCounterX(player === "X" ? counterX + 1 : counterX);
-      setCounterO(player === "O" ? counterO + 1 : counterO);
+      setCounterX(player === "O" ? counterX + 1 : counterX);
+      setCounterO(player === "X" ? counterO + 1 : counterO);
+      setWinner(true);
     }
     if (!values.includes(null) && !winner) {
-      setWinner(true);
       setPlayer("no winner");
+      setWinner(true);
     }
   }, [values]);
 

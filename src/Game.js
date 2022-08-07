@@ -49,7 +49,6 @@ const Game = () => {
   const [player2, setPlayer2] = useState("Player O");
   const [counterX, setCounterX] = useState(0);
   const [counterO, setCounterO] = useState(0);
-  // const [showId, setShowId] = useState(false);
   return (
     <>
       <TitleStyled>Tic tac toe game</TitleStyled>
@@ -70,13 +69,25 @@ const Game = () => {
         setCounterX={setCounterX}
       />
       <RefreshButton
-        // showId={showId}
+        onSwitchPlayers={() => {
+          setValues(new Array(9).fill(null));
+          // setSwitchPlayers(player1);
+          setPlayer1(player2);
+          setPlayer2(player1);
+          // setSwitchCounter(counterX);
+          setCounterX(counterO);
+          setCounterO(counterX);
+          setPlayer("X");
+          setWinner(false);
+          setValues(new Array(9).fill(null));
+        }}
         onClear={() => {
           setValues(new Array(9).fill(null));
           setPlayer("X");
           setWinner(false);
+          setCounterX(0);
+          setCounterO(0);
         }}
-        // onShowForm={() => setShowId(true)}
       />
     </>
   );

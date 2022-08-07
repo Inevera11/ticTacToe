@@ -7,11 +7,11 @@ const ButtonStyled = styled(Button)`
   padding: 0.5rem;
 `;
 
-const RefreshButton = ({ onClear }) => {
+const RefreshButton = ({ onClear, onSwitchPlayers }) => {
   return (
     <>
       <ButtonStyled onClick={onClear}> Play Again</ButtonStyled>
-      <ButtonStyled>Remach</ButtonStyled>
+      <ButtonStyled onClick={onSwitchPlayers}>Rematch</ButtonStyled>
     </>
   );
 };

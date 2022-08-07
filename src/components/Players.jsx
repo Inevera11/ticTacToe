@@ -12,6 +12,13 @@ const PlayersStyled = styled.div`
 const HighlightPlayer = styled.h2`
   text-shadow: ${(props) => (props.active ? "0 0 7px #b98ee3" : "none")};
 `;
+const CounterStyled = styled.h2`
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  font-size: x-large;
+  color: #070123;
+`;
 
 const Players = ({
   player,
@@ -54,8 +61,10 @@ const Players = ({
             <h2>{player1}</h2>
             <h2>{player2}</h2>
           </PlayersStyled>
-          <h2>{counterX}</h2>
-          <h2>{counterO}</h2>
+          <CounterStyled>
+            <h2>{counterX}</h2>
+            <h2>{counterO}</h2>
+          </CounterStyled>
           <WhoWon player={player} />
         </>
       ) : (
@@ -82,8 +91,10 @@ const Players = ({
               {player2}
             </HighlightPlayer>
           </PlayersStyled>
-          <h2>{counterX}</h2>
-          <h2>{counterO}</h2>
+          <CounterStyled>
+            <h2>{counterX}</h2>
+            <h2>{counterO}</h2>
+          </CounterStyled>
         </>
       )}
     </>
