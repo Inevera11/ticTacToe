@@ -43,11 +43,22 @@ const TitleStyled = styled.h1`
 
 const Game = () => {
   const [values, setValues] = useState(new Array(9).fill(null));
+  const [player, setPlayer] = useState("X");
   return (
     <>
       <TitleStyled>Tic tac toe game</TitleStyled>
-      <Board values={values} setValues={setValues} />
-      <RefreshButton onClear={() => setValues(new Array(9).fill(null))} />
+      <Board
+        values={values}
+        setValues={setValues}
+        player={player}
+        setPlayer={setPlayer}
+      />
+      <RefreshButton
+        onClear={() => {
+          setValues(new Array(9).fill(null));
+          setPlayer("X");
+        }}
+      />
     </>
   );
 };

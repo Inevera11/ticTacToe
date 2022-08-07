@@ -3,8 +3,7 @@ import { Square } from "./Square";
 import isWinner from "./isWinner";
 import Players from "./Players";
 
-export const Board = ({ values, setValues }) => {
-  const [player, setPlayer] = useState("X");
+export const Board = ({ values, setValues, player, setPlayer }) => {
   const [winner, setWinner] = useState(false);
 
   useEffect(() => {
