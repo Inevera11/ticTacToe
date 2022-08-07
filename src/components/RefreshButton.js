@@ -1,7 +1,6 @@
 import { Button } from "evergreen-ui";
 import React from "react";
 import styled from "styled-components";
-import PlayerId from "./PlayerId";
 
 const ButtonStyled = styled(Button)`
   margin: 0.5rem;

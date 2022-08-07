@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
-.result{
-  margin: auto;
-  display: grid;
-  grid-template-rows: 1fr;
-  padding: 1em;
-  text-align: center;
-  font-size: 70px;
-  font-weight: 600;
-  color: #0c0c6abf;
-    text-shadow: 0px 0px 19px #eeddff, 0px 0px 17px #ad65f5, 0px 0px 17px #c994fd, 0px 0px 20px #ddbcff;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   background: rgba(2, 0, 36, 0.941);

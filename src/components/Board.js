@@ -4,21 +4,31 @@ import isWinner from "./isWinner";
 import Players from "./Players";
 
 export const Board = ({
+  player1,
+  setPlayer1,
+  player2,
+  setPlayer2,
   values,
   setValues,
   player,
   setPlayer,
   winner,
   setWinner,
+  counterO,
+  setCounterO,
+  counterX,
+  setCounterX,
 }) => {
   useEffect(() => {
     if (isWinner(values)) {
       setWinner(true);
       setPlayer(player === "X" ? "O" : "X");
+      setCounterX(player === "X" ? counterX + 1 : counterX);
+      setCounterO(player === "O" ? counterO + 1 : counterO);
     }
     if (!values.includes(null) && !winner) {
       setWinner(true);
-      setPlayer("yet to come");
+      setPlayer("no winner");
     }
   }, [values]);
 
@@ -36,10 +46,28 @@ export const Board = ({
   return (
     <React.Fragment>
       {winner ? (
-        <h2 className="result"> The winner is {player} </h2>
+        <Players
+          player={player}
+          player1={player1}
+          setPlayer1={setPlayer1}
+          player2={player2}
+          setPlayer2={setPlayer2}
+          winner={winner}
+          counterO={counterO}
+          counterX={counterX}
+        />
       ) : (
         <>
-          <Players player={player} />
+          <Players
+            player={player}
+            player1={player1}
+            setPlayer1={setPlayer1}
+            player2={player2}
+            setPlayer2={setPlayer2}
+            winner={winner}
+            counterO={counterO}
+            counterX={counterX}
+          />
           <div className="squares">
             {values.map((item, id) => (
               <Square
