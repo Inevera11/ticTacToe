@@ -3,9 +3,14 @@ import { Square } from "./Square";
 import isWinner from "./isWinner";
 import Players from "./Players";
 
-export const Board = ({ values, setValues, player, setPlayer }) => {
-  const [winner, setWinner] = useState(false);
-
+export const Board = ({
+  values,
+  setValues,
+  player,
+  setPlayer,
+  winner,
+  setWinner,
+}) => {
   useEffect(() => {
     if (isWinner(values)) {
       setWinner(true);

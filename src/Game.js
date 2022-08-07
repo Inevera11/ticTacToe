@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Board } from "./components/Board";
 import styled from "styled-components";
 import RefreshButton from "./components/RefreshButton";
+import { ShopIcon } from "evergreen-ui";
 // export default function Game() {
 //     return <div>Hi! I am a game</div>
 // }
@@ -44,6 +45,8 @@ const TitleStyled = styled.h1`
 const Game = () => {
   const [values, setValues] = useState(new Array(9).fill(null));
   const [player, setPlayer] = useState("X");
+  const [winner, setWinner] = useState(false);
+  // const [showId, setShowId] = useState(false);
   return (
     <>
       <TitleStyled>Tic tac toe game</TitleStyled>
@@ -52,12 +55,16 @@ const Game = () => {
         setValues={setValues}
         player={player}
         setPlayer={setPlayer}
+        winner={winner}
+        setWinner={setWinner}
       />
       <RefreshButton
+        // showId={showId}
         onClear={() => {
           setValues(new Array(9).fill(null));
           setPlayer("X");
         }}
+        // onShowForm={() => setShowId(true)}
       />
     </>
   );
