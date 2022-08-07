@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Board } from "./components/Board";
-
+import styled from "styled-components";
+import RefreshButton from "./components/RefreshButton";
 // export default function Game() {
 //     return <div>Hi! I am a game</div>
 // }
@@ -27,12 +28,27 @@ import { Board } from "./components/Board";
 //     )
 // }
 
+const TitleStyled = styled.h1`
+  text-align: center;
+  margin-top: 40px;
+  color: #cbb5e7de;
+  font-size: 65px;
+  text-shadow: -6px 2px 9px #c581f999;
+  transition: ease-in-out 1s;
+  &:hover {
+    color: #df8282;
+    text-shadow: 1px 1px 12px #c35a5ad1;
+  }
+`;
+
 const Game = () => {
+  const [values, setValues] = useState(new Array(9).fill(null));
   return (
-    <h1>
-      Tic tac toe game
-      <Board />
-    </h1>
+    <>
+      <TitleStyled>Tic tac toe game</TitleStyled>
+      <Board values={values} setValues={setValues} />
+      <RefreshButton onClear={() => setValues(new Array(9).fill(null))} />
+    </>
   );
 };
 

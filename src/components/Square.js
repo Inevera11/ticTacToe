@@ -8,14 +8,15 @@ import styled from "styled-components";
 // }
 
 const ButtonStyled = styled.button`
-  background-color: #ffffff;
+  background-color: #cddbf3fa;
   border: 1px solid #999;
-  font-size: 70px;
+  font-size: 65px;
   font-weight: bold;
   transition: all 0.3s;
+  color: #19181ae8;
 
   &:hover {
-    background-color: #000000;
+    background-color: #97c1d1;
   }
 `;
 

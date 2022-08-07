@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Square } from "./Square";
 import isWinner from "./isWinner";
 
-export const Board = () => {
-  const [values, setValues] = useState(Array(9).fill(null));
+export const Board = ({ values, setValues }) => {
   const [player, setPlayer] = useState("X");
   const [winner, setWinner] = useState(false);
 
