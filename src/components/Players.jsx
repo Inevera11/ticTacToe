@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 const PlayersStyled = styled.div`
+  margin: 0;
   display: flex;
   flex-flow: row;
   justify-content: space-around;
@@ -13,6 +14,7 @@ const HighlightPlayer = styled.h2`
   text-shadow: ${(props) => (props.active ? "0 0 7px #b98ee3" : "none")};
 `;
 const CounterStyled = styled.h2`
+  margin: 0;
   display: flex;
   flex-flow: row;
   justify-content: space-around;
@@ -34,7 +36,7 @@ const Players = ({
   const secondPlayerElement = useRef();
 
   const WinnerStyled = styled.h2`
-    margin: auto;
+    margin: 0 auto;
     grid-template-rows: 1fr;
     padding: 1em;
     text-align: center;
@@ -50,8 +52,7 @@ const Players = ({
       return <WinnerStyled>The winner is {player1}</WinnerStyled>;
     if (player === "O")
       return <WinnerStyled>The winner is {player2}</WinnerStyled>;
-    if (player === "no winner")
-      return <WinnerStyled>"This match was equal"</WinnerStyled>;
+    if (player === "no winner") return <WinnerStyled>Draw</WinnerStyled>;
   };
   return (
     <>
