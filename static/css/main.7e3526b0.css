@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap);body{background:rgba(2,0,36,.941);background:linear-gradient(140deg,rgba(2,0,36,.953),rgba(9,9,121,.888) 15%,#072d90 43%,rgba(11,102,172,.935) 63%,rgba(0,212,255,.902) 98%,#81c9f6);font-family:Poppins,sans-serif;height:100vh}.squares{grid-column-gap:2px;grid-row-gap:2px;-webkit-column-gap:2px;column-gap:2px;display:grid;grid-template-columns:100px 100px 100px;grid-template-rows:100px 100px 100px;justify-content:center;margin-top:0;row-gap:2px}
+/*# sourceMappingURL=main.7e3526b0.css.map*/
