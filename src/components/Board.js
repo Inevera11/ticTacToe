@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Square } from "./Square";
 import isWinner from "./isWinner";
+import Players from "./Players";
 
 export const Board = ({ values, setValues }) => {
   const [player, setPlayer] = useState("X");
   const [winner, setWinner] = useState(false);
 
   useEffect(() => {
-    if (isWinner(values))
-      return [setWinner(true), setPlayer(player === "X" ? "O" : "X")];
-    if (!values.includes(null) && !winner)
-      return [setWinner(true), setPlayer("yet to come")];
+    if (isWinner(values)) {
+      setWinner(true);
+      setPlayer(player === "X" ? "O" : "X");
+    }
+    if (!values.includes(null) && !winner) {
+      setWinner(true);
+      setPlayer("yet to come");
+    }
   }, [values]);
 
   const changeSquare = (id) => {
@@ -29,17 +34,20 @@ export const Board = ({ values, setValues }) => {
       {winner ? (
         <h2 className="result"> The winner is {player} </h2>
       ) : (
-        <div className="squares">
-          {values.map((item, id) => (
-            <Square
-              key={id}
-              value={item}
-              setValue={() => {
-                changeSquare(id);
-              }}
-            />
-          ))}
-        </div>
+        <>
+          <Players player={player} />
+          <div className="squares">
+            {values.map((item, id) => (
+              <Square
+                key={id}
+                value={item}
+                setValue={() => {
+                  changeSquare(id);
+                }}
+              />
+            ))}
+          </div>
+        </>
       )}
     </React.Fragment>
   );
