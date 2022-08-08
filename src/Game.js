@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Board } from "./components/Board";
 import styled from "styled-components";
-import RefreshButton from "./components/RefreshButton";
+import RefreshButton from "./components/Buttons";
+
 // export default function Game() {
 //     return <div>Hi! I am a game</div>
 // }
@@ -27,10 +28,35 @@ import RefreshButton from "./components/RefreshButton";
 //         </div>
 //     )
 // }
+const Button = styled.button`
+  align-self: flex-end;
+  margin: auto 3% auto auto;
+  border: 1px solid #1a64d6;
+  background: #1a64d6;
+  color: #e0ebef;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 16px 24px;
+  border-radius: 30px;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  box-shadow: -2px 2px 20px 2px #271f72;
+  &:hover {
+    background: #dae7e9e0;
+    color: #1a64d6;
+    border: 1px solid #1a64d6;
+  }
+`;
 
+const HeaderStyled = styled.div`
+  display: flex;
+  flex-flow: row;
+  font-family: "Poppins";
+`;
 const TitleStyled = styled.h1`
+  margin: auto auto auto 30%;
+  align-self: center;
   text-align: center;
-  margin-top: 40px;
   color: #cbb5e7de;
   font-size: 65px;
   text-shadow: -6px 2px 9px #c581f999;
@@ -49,9 +75,16 @@ const Game = () => {
   const [player2, setPlayer2] = useState("Player O");
   const [counterX, setCounterX] = useState(0);
   const [counterO, setCounterO] = useState(0);
+  const [matchCounter, setMatchCounter] = useState(0);
   return (
     <>
-      <TitleStyled>Tic tac toe game</TitleStyled>
+      <HeaderStyled>
+        <TitleStyled>Tic tac toe game</TitleStyled>
+        <Button>
+          Matches Played:
+          <div>{matchCounter}</div>
+        </Button>
+      </HeaderStyled>
       <Board
         values={values}
         setValues={setValues}
@@ -67,17 +100,13 @@ const Game = () => {
         setCounterO={setCounterO}
         counterX={counterX}
         setCounterX={setCounterX}
+        matchCounter={matchCounter}
+        setMatchCounter={setMatchCounter}
       />
       <RefreshButton
         onSwitchPlayers={() => {
           setValues(new Array(9).fill(null));
-          // setSwitchPlayers(player1);
-          setPlayer1(player2);
-          setPlayer2(player1);
-          // setSwitchCounter(counterX);
-          setCounterX(counterO);
-          setCounterO(counterX);
-          setPlayer("X");
+          setPlayer(matchCounter % 2 === 0 ? "X" : "O");
           setWinner(false);
           setValues(new Array(9).fill(null));
         }}
@@ -87,6 +116,7 @@ const Game = () => {
           setWinner(false);
           setCounterX(0);
           setCounterO(0);
+          setMatchCounter(0);
         }}
       />
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Square } from "./Square";
 import isWinner from "./isWinner";
 import Players from "./Players";
@@ -18,17 +18,21 @@ export const Board = ({
   setCounterO,
   counterX,
   setCounterX,
+  matchCounter,
+  setMatchCounter,
 }) => {
   useEffect(() => {
     if (isWinner(values)) {
       setPlayer(player === "X" ? "O" : "X");
       setCounterX(player === "O" ? counterX + 1 : counterX);
       setCounterO(player === "X" ? counterO + 1 : counterO);
+      setMatchCounter(matchCounter + 1);
       setWinner(true);
     }
     if (!values.includes(null) && !winner) {
       setPlayer("no winner");
       setWinner(true);
+      setMatchCounter(matchCounter + 1);
     }
   }, [values]);
 

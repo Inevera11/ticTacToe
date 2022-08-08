@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import { Button } from "evergreen-ui";
 
 const PlayersStyled = styled.div`
   margin: 0;
@@ -9,9 +10,13 @@ const PlayersStyled = styled.div`
   font-size: x-large;
   color: #070123;
   transition: ease-in-out 0.4s;
+  text-shadow: 0 0 2px #b4e0e3;
 `;
 const HighlightPlayer = styled.h2`
-  text-shadow: ${(props) => (props.active ? "0 0 7px #b98ee3" : "none")};
+  text-shadow: ${(props) =>
+    props.active
+      ? "0px 0px 17px #eeddff, 0px 0px 19px #ad65f5,0 0 15px #b98ee3"
+      : "0 0 2px #b4e0e3"};
 `;
 const CounterStyled = styled.h2`
   margin: 0;
@@ -20,6 +25,7 @@ const CounterStyled = styled.h2`
   justify-content: space-around;
   font-size: x-large;
   color: #070123;
+  text-shadow: 0 0 2px #b4e0e3;
 `;
 
 const Players = ({
