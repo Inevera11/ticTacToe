@@ -42,9 +42,10 @@ const Button = styled.button`
   cursor: pointer;
   box-shadow: -2px 2px 20px 2px #271f72;
   &:hover {
-    background: #dae7e9e0;
-    color: #1a64d6;
+    background: #bbcef7e0;
+    color: #14066d;
     border: 1px solid #1a64d6;
+    box-shadow: inset 0 0 8px #091151;
   }
 `;
 
