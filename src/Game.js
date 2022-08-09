@@ -105,6 +105,7 @@ const Game = () => {
         setMatchCounter={setMatchCounter}
       />
       <RefreshButton
+        winner={winner}
         onSwitchPlayers={() => {
           setValues(new Array(9).fill(null));
           setPlayer(matchCounter % 2 === 0 ? "X" : "O");

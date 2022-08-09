@@ -29,11 +29,15 @@ const ButtonStyled = styled(Button)`
   }
 `;
 
-const RefreshButton = ({ onClear, onSwitchPlayers }) => {
+const RefreshButton = ({ onClear, onSwitchPlayers, winner }) => {
   return (
     <ButtonsStyled>
-      <ButtonStyled onClick={onClear}> Play Again</ButtonStyled>
-      <ButtonStyled onClick={onSwitchPlayers}>Rematch</ButtonStyled>
+      <ButtonStyled onClick={onClear}> Start Over</ButtonStyled>
+      {winner ? (
+        <ButtonStyled onClick={onSwitchPlayers}>Rematch</ButtonStyled>
+      ) : (
+        ""
+      )}
     </ButtonsStyled>
   );
 };

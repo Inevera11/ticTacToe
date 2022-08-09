@@ -34,6 +34,7 @@ const isWinner = (values) => {
       values.at(2) !== null)
   )
     return true;
+  return false;
 };
 
 export default isWinner;

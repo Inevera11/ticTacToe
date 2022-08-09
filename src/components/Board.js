@@ -29,7 +29,7 @@ export const Board = ({
       setMatchCounter(matchCounter + 1);
       setWinner(true);
     }
-    if (!values.includes(null) && !winner) {
+    if (!values.includes(null) && isWinner(values) === false) {
       setPlayer("no winner");
       setWinner(true);
       setMatchCounter(matchCounter + 1);

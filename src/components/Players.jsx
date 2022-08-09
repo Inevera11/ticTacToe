@@ -1,12 +1,11 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import { Button } from "evergreen-ui";
 
 const PlayersStyled = styled.div`
   margin: 0;
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: x-large;
   color: #070123;
   transition: ease-in-out 0.4s;
@@ -22,7 +21,7 @@ const CounterStyled = styled.h2`
   margin: 0;
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: x-large;
   color: #070123;
   text-shadow: 0 0 2px #b4e0e3;
@@ -58,7 +57,7 @@ const Players = ({
       return <WinnerStyled>The winner is {player1}</WinnerStyled>;
     if (player === "O")
       return <WinnerStyled>The winner is {player2}</WinnerStyled>;
-    if (player === "no winner") return <WinnerStyled>Draw</WinnerStyled>;
+    if (player === "no winner") return <WinnerStyled>Draw </WinnerStyled>;
   };
   return (
     <>
