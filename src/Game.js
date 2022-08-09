@@ -89,7 +89,7 @@ const Game = () => {
   return (
     <>
       <HeaderStyled>
-        <Nothing>jooooooooł</Nothing>
+        <Nothing>Matches Played:</Nothing>
         <TitleStyled>Tic tac toe game</TitleStyled>
         <Button>
           Matches Played:
