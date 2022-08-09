@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 const ButtonsStyled = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   margin: 2% 3%;
+  justify-content: space-evenly;
 `;
 
 const ButtonStyled = styled(Button)`

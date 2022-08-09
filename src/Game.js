@@ -29,8 +29,8 @@ import RefreshButton from "./components/Buttons";
 //     )
 // }
 const Button = styled.button`
-  align-self: flex-end;
-  margin: auto 3% auto auto;
+  /* align-self: right; */
+  margin: auto;
   border: 1px solid #1a64d6;
   background: #1a64d6;
   color: #e0ebef;
@@ -49,13 +49,22 @@ const Button = styled.button`
   }
 `;
 
+const Nothing = styled.button`
+  opacity: 0;
+  margin: auto;
+  padding: 16px 24px;
+  font-size: 16px;
+  line-height: 22px;
+`;
+
 const HeaderStyled = styled.div`
   display: flex;
   flex-flow: row;
   font-family: "Poppins";
+  justify-content: space-evenly;
 `;
 const TitleStyled = styled.h1`
-  margin: auto auto auto 30%;
+  margin: auto;
   align-self: center;
   text-align: center;
   color: #cbb5e7de;
@@ -80,6 +89,7 @@ const Game = () => {
   return (
     <>
       <HeaderStyled>
+        <Nothing>jooooooooł</Nothing>
         <TitleStyled>Tic tac toe game</TitleStyled>
         <Button>
           Matches Played:
