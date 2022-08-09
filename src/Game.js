@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Board } from "./components/Board";
 import styled from "styled-components";
 import RefreshButton from "./components/Buttons";
+import CornerText from "./components/CornerText";
 
 // export default function Game() {
 //     return <div>Hi! I am a game</div>
@@ -39,7 +40,6 @@ const Button = styled.button`
   padding: 16px 24px;
   border-radius: 30px;
   transition: ease-in-out 0.3s;
-  cursor: pointer;
   box-shadow: -2px 2px 20px 2px #271f72;
   &:hover {
     background: #bbcef7e0;
@@ -131,6 +131,7 @@ const Game = () => {
           setMatchCounter(0);
         }}
       />
+      <CornerText />
     </>
   );
 };
