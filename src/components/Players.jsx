@@ -12,8 +12,8 @@ const PlayersStyled = styled.div`
   text-shadow: 0 0 2px #b4e0e3;
 `;
 const HighlightPlayer = styled.h2`
-  text-shadow: ${(props) =>
-    props.active
+  text-shadow: ${({ active }) =>
+    active
       ? "0px 0px 17px #eeddff, 0px 0px 19px #ad65f5,0 0 15px #b98ee3"
       : "0 0 2px #b4e0e3"};
 `;
@@ -25,6 +25,17 @@ const CounterStyled = styled.h2`
   font-size: x-large;
   color: #070123;
   text-shadow: 0 0 2px #b4e0e3;
+`;
+const WinnerStyled = styled.h2`
+  margin: 0 auto;
+  grid-template-rows: 1fr;
+  padding: 1em;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 600;
+  color: #0c0c6abf;
+  text-shadow: 0px 0px 19px #eeddff, 0px 0px 17px #ad65f5, 0px 0px 17px #c994fd,
+    0px 0px 20px #ddbcff;
 `;
 
 const Players = ({
@@ -39,18 +50,6 @@ const Players = ({
 }) => {
   const firstPlayerElement = useRef();
   const secondPlayerElement = useRef();
-
-  const WinnerStyled = styled.h2`
-    margin: 0 auto;
-    grid-template-rows: 1fr;
-    padding: 1em;
-    text-align: center;
-    font-size: 70px;
-    font-weight: 600;
-    color: #0c0c6abf;
-    text-shadow: 0px 0px 19px #eeddff, 0px 0px 17px #ad65f5,
-      0px 0px 17px #c994fd, 0px 0px 20px #ddbcff;
-  `;
 
   const WhoWon = ({ player }) => {
     if (player === "X")

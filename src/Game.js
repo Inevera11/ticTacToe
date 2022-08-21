@@ -30,7 +30,6 @@ import CornerText from "./components/CornerText";
 //     )
 // }
 const Button = styled.button`
-  /* align-self: right; */
   margin: auto;
   border: 1px solid #1a64d6;
   background: #1a64d6;
