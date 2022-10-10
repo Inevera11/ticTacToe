@@ -18,4 +18,4 @@ npm run start
 ```
 
 ## Live Demo:
-You can  visit the demo here: https://inevera11.github.io/ticTacToe/
+You can  visit the demo here: https://Inevera11.github.io/ticTacToe
