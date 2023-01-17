@@ -12,8 +12,8 @@ body {
 display: grid ;
 column-gap: 2px;
 row-gap: 2px;
-grid-template-columns: 10vw 10vw 10vw;
-grid-template-rows: 10vw 10vw 10vw;
+grid-template-columns: 9vw 9vw 9vw;
+grid-template-rows: 9vw 9vw 9vw;
 justify-content: center;
 margin-top: 0;
 
