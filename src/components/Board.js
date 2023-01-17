@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Square } from "./Square";
 import isWinner from "./isWinner";
 import Players from "./Players";
+import { BoardStyled } from "../styles/BoardStyles";
+import { gameStatsContext } from "../context/gameStatsContext";
 
-export const Board = ({
-  player1,
-  setPlayer1,
-  player2,
-  setPlayer2,
-  values,
-  setValues,
-  player,
-  setPlayer,
-  winner,
-  setWinner,
-  counterO,
-  setCounterO,
-  counterX,
-  setCounterX,
-  matchCounter,
-  setMatchCounter,
-}) => {
+export const Board = () => {
+  const {
+    values,
+    setValues,
+    player,
+    setPlayer,
+    winner,
+    setWinner,
+    counterO,
+    setCounterO,
+    counterX,
+    setCounterX,
+    matchCounter,
+    setMatchCounter,
+  } = useContext(gameStatsContext);
+
   useEffect(() => {
     if (isWinner(values)) {
       setPlayer(player === "X" ? "O" : "X");
@@ -48,30 +48,12 @@ export const Board = ({
   };
 
   return (
-    <React.Fragment>
+    <BoardStyled>
       {winner ? (
-        <Players
-          player={player}
-          player1={player1}
-          setPlayer1={setPlayer1}
-          player2={player2}
-          setPlayer2={setPlayer2}
-          winner={winner}
-          counterO={counterO}
-          counterX={counterX}
-        />
+        <Players />
       ) : (
         <>
-          <Players
-            player={player}
-            player1={player1}
-            setPlayer1={setPlayer1}
-            player2={player2}
-            setPlayer2={setPlayer2}
-            winner={winner}
-            counterO={counterO}
-            counterX={counterX}
-          />
+          <Players />
           <div className="squares">
             {values.map((item, id) => (
               <Square
@@ -85,6 +67,6 @@ export const Board = ({
           </div>
         </>
       )}
-    </React.Fragment>
+    </BoardStyled>
   );
 };

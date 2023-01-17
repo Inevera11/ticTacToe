@@ -1,36 +1,34 @@
-import { Button } from "evergreen-ui";
 import React from "react";
-import styled from "styled-components";
+import { ButtonsStyled, ButtonStyled } from "../styles/ButtonsStyles";
+import { useContext } from "react";
+import { gameStatsContext } from "../context/gameStatsContext";
 
-const ButtonsStyled = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 2% 3%;
-  justify-content: space-evenly;
-`;
+const RefreshButton = () => {
+  const {
+    winner,
+    setValues,
+    setPlayer,
+    setWinner,
+    setCounterX,
+    setCounterO,
+    setMatchCounter,
+    matchCounter,
+  } = useContext(gameStatsContext);
 
-const ButtonStyled = styled(Button)`
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid #1a64d6;
-  background: #113c7e;
-  color: #e0ebef;
-  font-size: 16px;
-  line-height: 22px;
-  padding: 18px 24px;
-  border-radius: 30px;
-  transition: ease-in-out 0.3s;
-  cursor: pointer;
-  box-shadow: 2px 2px 3px 0px #8babe1;
-  &:hover {
-    color: #113c7e;
-    border: 1px solid #0d2185;
-    background-color: #e6ebfd;
-    box-shadow: inset 0 0 8px 0px #4e5ce9;
-  }
-`;
-
-const RefreshButton = ({ onClear, onSwitchPlayers, winner }) => {
+  const onSwitchPlayers = () => {
+    setValues(new Array(9).fill(null));
+    setPlayer(matchCounter % 2 === 0 ? "X" : "O");
+    setWinner(false);
+    setValues(new Array(9).fill(null));
+  };
+  const onClear = () => {
+    setValues(new Array(9).fill(null));
+    setPlayer("X");
+    setWinner(false);
+    setCounterX(0);
+    setCounterO(0);
+    setMatchCounter(0);
+  };
   return (
     <ButtonsStyled>
       <ButtonStyled onClick={onClear}> Start Over</ButtonStyled>

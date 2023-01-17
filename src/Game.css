@@ -12,9 +12,17 @@ body {
 display: grid ;
 column-gap: 2px;
 row-gap: 2px;
-grid-template-columns: 100px 100px 100px;
-grid-template-rows: 100px 100px 100px;
+grid-template-columns: 10vw 10vw 10vw;
+grid-template-rows: 10vw 10vw 10vw;
 justify-content: center;
 margin-top: 0;
 
+}
+
+@media (max-width: 900px) or (max-height: 800px) {
+ 
+  .squares{
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+  }
 }
