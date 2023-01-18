@@ -5,7 +5,7 @@ export const PlayersStyled = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: #070123;
   transition: ease-in-out 0.4s;
   text-shadow: 0 0 2px #b4e0e3;
@@ -24,7 +24,7 @@ export const CounterStyled = styled.h2`
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: #070123;
   text-shadow: 0 0 2px #b4e0e3;
   @media (max-width: 900px) or (max-height: 800px) {
