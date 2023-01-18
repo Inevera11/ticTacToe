@@ -29,7 +29,7 @@ margin-top: 0;
 @media (min-width:1500px) {
 
   .squares {
-    grid-template-columns: 130px 130px 130px;
-    grid-template-rows: 130px 130px 130px;
+    grid-template-columns: 110px 110px 110px;
+    grid-template-rows: 110px 110px 110px;
   }
 }
